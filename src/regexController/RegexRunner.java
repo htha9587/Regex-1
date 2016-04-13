@@ -1,9 +1,9 @@
 package regexController;
 
 /**
- * Version 0.1
+ * Version 0.2
  * @author htha9587
- * 4-11-16
+ * 4-13-16
  */
 
 

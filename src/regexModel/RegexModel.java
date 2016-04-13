@@ -1,5 +1,6 @@
 package regexModel;
 
-public class RegexModel {
+public class RegexModel 
+{
 
 }
