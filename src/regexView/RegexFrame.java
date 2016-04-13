@@ -25,6 +25,11 @@ public class RegexFrame extends JFrame
 		setUpFrame();
 	}
 	
+	private RegexController baseController() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 	/**
 	 * Helper method to setup JFrame and its structures.
 	 */
