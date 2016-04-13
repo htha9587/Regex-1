@@ -16,20 +16,27 @@ import java.io.*;
 
 public class RegexController 
 {
-	private RegexView display;
+	private RegexPanel basePanel;
 	private RegexFrame baseFrame;
+	
+	public RegexController()
+	{
+		basePanel = new RegexPanel(this);
+		baseFrame = new RegexFrame();
+	}
+	
 	
 	public void start()
 	{
 		
 	}
 	
-	public RegexView getDisplay() {
-		return display;
+	public RegexPanel getDisplay() {
+		return basePanel;
 	}
 
-	public void setDisplay(RegexView display) {
-		this.display = display;
+	public void setDisplay(RegexPanel display) {
+		this.basePanel = display;
 	}
 
 	public RegexFrame getBaseFrame() {

@@ -18,7 +18,7 @@ public class RegexFrame extends JFrame
 	private RegexController baseController;
 	private RegexPanel basePanel;
 	
-	public RegexFrame(RegexController baseController)
+	public RegexFrame()
 	{
 		this.baseController = baseController(); //Assign data member parameter.
 		basePanel = new RegexPanel(baseController); // Makes instance with controller reference.
