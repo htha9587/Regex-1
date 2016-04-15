@@ -12,7 +12,7 @@ import java.io.*;
 import java.util.*;
 
 /**
- * Version 0.4
+ * Version 0.7
  * 4-13-16
  * @author htha9587
  *
@@ -23,6 +23,7 @@ public class RegexPanel extends JPanel
 {
 	private RegexController baseController;
 	private JButton enterButton;
+	private JButton exitButton;
 	private JLabel titleLabel;
 	private JLabel firstLabel;
 	private JLabel secondLabel;
@@ -39,6 +40,8 @@ public class RegexPanel extends JPanel
 		this.baseController = baseController;
 		baseLayout = new SpringLayout();
 		enterButton = new JButton("Enter");
+		exitButton = new JButton("Exit");
+		
 		firstField = new JTextField("Enter first name",20);
 		secondField = new JTextField("Enter last name",20);
 		thirdField = new JTextField("Enter phone #",20);
@@ -68,6 +71,7 @@ public class RegexPanel extends JPanel
 	{
 		this.setLayout(baseLayout);
 		this.add(enterButton);
+		this.add(exitButton);
 		this.add(firstField);
 		this.add(titleLabel);
 		this.add(firstLabel);
@@ -110,6 +114,8 @@ public class RegexPanel extends JPanel
 		baseLayout.putConstraint(SpringLayout.EAST, firstLabel, -6, SpringLayout.WEST, firstField);
 		baseLayout.putConstraint(SpringLayout.WEST, titleLabel, 178, SpringLayout.WEST, this);
 		baseLayout.putConstraint(SpringLayout.SOUTH, titleLabel, -21, SpringLayout.NORTH, firstField);
+		baseLayout.putConstraint(SpringLayout.NORTH, exitButton, 0, SpringLayout.NORTH, enterButton);
+		baseLayout.putConstraint(SpringLayout.WEST, exitButton, 6, SpringLayout.EAST, enterButton);
 	}
 	
 	/**
@@ -127,6 +133,14 @@ public class RegexPanel extends JPanel
 				thirdField.setText("");
 				fourthField.setText("");
 			
+			}
+		});
+		
+		exitButton.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent click)
+			{
+				System.exit(0);
 			}
 		});
 	}
