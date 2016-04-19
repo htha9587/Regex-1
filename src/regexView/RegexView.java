@@ -5,8 +5,8 @@ import javax.swing.*;
 /**
  * Popup class for when user clicks the enter button.
  * @author htha9587
- *Version 0.5
- *4-13-16
+ *Version 1.0
+ *4-19-16
  */
 
 public class RegexView 

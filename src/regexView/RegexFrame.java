@@ -6,10 +6,10 @@ import regexController.RegexController;
 
 
 /**
- * Version 0.2
+ * Version 1.0
  * @author htha9587
  * Creates JFrame for Regex GUI.
- * 4-13-16
+ * 4-19-16
  */
 
 
@@ -18,9 +18,9 @@ public class RegexFrame extends JFrame
 	private RegexController baseController;
 	private RegexPanel basePanel;
 	
-	public RegexFrame()
+	public RegexFrame(RegexController baseController)
 	{
-		this.baseController = baseController(); //Assign data member parameter.
+		this.baseController = baseController; //Assign data member parameter.
 		basePanel = new RegexPanel(baseController); // Makes instance with controller reference.
 		setUpFrame();
 	}

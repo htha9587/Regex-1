@@ -12,8 +12,8 @@ import java.io.*;
 import java.util.*;
 
 /**
- * Version 0.7
- * 4-13-16
+ * Version 1.0
+ * 4-19-16
  * @author htha9587
  *
  */
@@ -22,7 +22,6 @@ import java.util.*;
 public class RegexPanel extends JPanel
 {
 	private RegexController baseController;
-	private RegexPanel display;
 	private JButton enterButton;
 	private JButton exitButton;
 	private JLabel titleLabel;
@@ -36,23 +35,22 @@ public class RegexPanel extends JPanel
 	private JTextField emailField;
 	private JTextField phoneField;
 	
-	public RegexPanel(RegexController baseController2)
+	public RegexPanel(RegexController baseController)
 	{
 		this.baseController = baseController;
 		baseLayout = new SpringLayout();
 		enterButton = new JButton("Enter");
 		exitButton = new JButton("Exit");
-		
 		firstNameField = new JTextField("Enter first name",20);
 		lastNameField = new JTextField("Enter last name",20);
-		emailField = new JTextField("Enter phone #",20);
-		phoneField = new JTextField("Enter email",20);
+		phoneField = new JTextField("Enter phone #",20);
+		emailField = new JTextField("Enter email",20);
 		titleLabel = new JLabel("Regex 1");
 		titleLabel.setFont(new Font("Lucida Sans Unicode", Font.BOLD, 19));
 		firstLabel = new JLabel("First Name");
 		secondLabel = new JLabel("Last Name");
-		thirdLabel = new JLabel("Phone #");
-		fourthLabel = new JLabel("Email Address");
+		fourthLabel = new JLabel("Phone #");
+		thirdLabel = new JLabel("Email Address");
 		
 		
 		setBackground(Color.cyan);
@@ -133,17 +131,14 @@ public class RegexPanel extends JPanel
 				String lastName =  lastNameField.getText();
 				String email = emailField.getText();
 				String phone = phoneField.getText();
-                Object answer1 = JOptionPane.showInputDialog(null, firstNameField.getText(), JOptionPane.INFORMATION_MESSAGE);
-                Object answer2 = JOptionPane.showInputDialog(null, lastNameField.getText(), JOptionPane.INFORMATION_MESSAGE);
-                Object answer3 = JOptionPane.showInputDialog(null, emailField.getText(), JOptionPane.INFORMATION_MESSAGE);
-                Object answer4 = JOptionPane.showInputDialog(null,  phoneField.getText(), JOptionPane.INFORMATION_MESSAGE);
-                String text = null;
-                String emailAddress = null;
-                String phoneNumber = null;
-				JOptionPane.showMessageDialog(null, firstNameField.getText(), text, JOptionPane.PLAIN_MESSAGE);
-				JOptionPane.showMessageDialog(null, lastNameField.getText(), text, JOptionPane.PLAIN_MESSAGE);
-				JOptionPane.showMessageDialog(null, emailField.getText(), emailAddress, JOptionPane.PLAIN_MESSAGE);
-				JOptionPane.showMessageDialog(null, phoneField.getText(), phoneNumber, JOptionPane.PLAIN_MESSAGE);
+				String last = baseController.validateLastName(lastName);
+               String firstText = baseController.validateFirstName(firstName);
+               String emailAddress = baseController.validateEmail(email);
+                String phoneNumber = baseController.validatePhoneNumber(phone);
+				JOptionPane.showMessageDialog(null, firstText);
+				JOptionPane.showMessageDialog(null, last);
+				JOptionPane.showMessageDialog(null, phoneNumber);
+				JOptionPane.showMessageDialog(null, emailAddress);
 				//baseController
 				firstNameField.setText("");
 				lastNameField.setText("");

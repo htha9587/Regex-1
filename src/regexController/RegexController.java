@@ -1,9 +1,9 @@
 package regexController;
 
 /***
- * Version 0.4
+ * Version 1.0
  * @author htha9587
- * 4-13-16
+ * 4-19-16
  */
 
 import regexController.RegexRunner;
@@ -24,8 +24,8 @@ public class RegexController
 	
 	public RegexController()
 	{
-		basePanel = new RegexPanel(this);
-		baseFrame = new RegexFrame();
+		
+		baseFrame = new RegexFrame(this);
 		baseModel = new RegexModel();
 	}
 	
@@ -52,11 +52,11 @@ public class RegexController
 	}
 	
 	
-	public String validateFirstName(String text)
+	public String validateFirstName(String firstText)
 	{
 		String validated = new String("");
 		
-		if(baseModel.nameValidation(text))
+		if(baseModel.nameValidation(firstText))
 		{
 			validated = " First Name Correct!";
 		}
@@ -70,11 +70,11 @@ public class RegexController
 		return validated;
 	}
 	
-	public String validateLastName(String text)
+	public String validateLastName(String lastText)
 	{
 		String validated = new String("");
 		
-		if(baseModel.nameValidation(text))
+		if(baseModel.nameValidation(lastText))
 		{
 			validated = "Last Name Correct!";
 		}
