@@ -21,53 +21,51 @@ public class RegexModel
 	static Pattern pattern = null;
 	static Matcher matcher = null;
 	//Validate first name.
-	public static String emailValidation(String emailAddress)
+	public boolean emailValidation(String emailAddress)
 	{
 		
 		Object gmail;
 		
 		if(matcher.matches())
 		{
-			return ("Pattern is Matched"+emailAddress);
+			return (true);
 		}
 		else
 		{
-			return ("Pattern is not Matched"+emailAddress);
+			return (false);
 		}
 		
 	}
 	
-	public static String phoneNumberValidation(String phone)
+	public boolean phoneNumberValidation(String phone)
 	{
-	int[] patternvalidation=(”\\d{3}-\\d{7}”);
 	//If pattern should be without (-) symbol replace the String by “\\d{10}”
-	pattern = Pattern.compile();
-
+	
 	matcher = pattern.matcher(phone);
 	if(matcher.matches())
 	{
-	return (“Pattern is Matched”+phone);
+	return (true);
 	}
 	else
 	{
-	return (“Pattern is Not Matched”+phone);
+	return (false);
 	}
 
 	}
 
 	
-	public static String nameValidation(String name)
+	public boolean  nameValidation(String name)
 	{
-	String patternvalidation=”[A-Z][a-z]+( [A-Z][a-z]+)”;// This pattern Validates like “Gowtham Raam” First Letter to be in InitCaps
-	pattern = Pattern.compile(patternvalidation);
+	// This pattern Validates like “Gowtham Raam” First Letter to be in InitCaps
+
 	matcher = pattern.matcher(name);
 	if(matcher.matches())
 	{
-	return (“Pattern is Matched”+name);
+	return (true);
 	}
 	else
 	{
-	return (“Pattern is Not Matched”+name);
+	return (false);
 	}
 
 	}
